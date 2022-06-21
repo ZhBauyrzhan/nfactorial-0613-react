@@ -2,6 +2,7 @@ import React from 'react';
 import { Photo } from './Photo';
 import 'bootstrap/dist/css/bootstrap.css';
 import './style.css';
+import { Navbar } from './Navbar.jsx';
 
 const imageInfo = [
 	{
@@ -27,14 +28,17 @@ const imageInfo = [
 ];
 const App = () => {
 	return (
-		<div className="App d-flex flex-column flex-xl-row align-items-stretch h-100">
-			{imageInfo.map((imageInfo) => (
-				<Photo
-					key={imageInfo.src}
-					src={imageInfo.src}
-					text={imageInfo.text}
-				/>
-			))}
+		<div className="App">
+			<Navbar />
+			<div className="d-flex flex-column flex-xl-row align-items-stretch h-100">
+				{imageInfo.map((imageInfo) => (
+					<Photo
+						key={imageInfo.src}
+						src={imageInfo.src}
+						text={imageInfo.text}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };
